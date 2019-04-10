@@ -8,10 +8,16 @@
 </head>
 <body>
 
-	<h3>Welcome To Online Book App</h3>
+	<h3>Book Management System</h3>
 	<a href="addbook.jsp">Add a Book</a>
 	<br>
-	<a href="books">Retrieve all Books</a>
+	<a href="delete.jsp">Delete a Book</a>
+	<br>
+	<a href="modify.jsp">Modify a Book</a>
+	<br>
+	<a href="retrieve.jsp">Retrieve a Book</a>
+	<br>
+	<a href="books/">Retrieve all Books</a>
 
 </body>
 </html>

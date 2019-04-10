@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h3>Enter book details</h3>
-	<form action="/books/save" method="post">
+	<form action="books/save" method="post">
 		Book Id<input type="text" name="id" required autofocus /> <br>
 		Book Name<input type="text" name="name" required autofocus /> <br>
 		<input type="submit" value="Add Book">

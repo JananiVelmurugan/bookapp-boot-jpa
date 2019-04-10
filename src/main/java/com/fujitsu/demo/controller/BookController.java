@@ -25,7 +25,6 @@ public class BookController {
 		ModelAndView modelAndView = new ModelAndView("listbooks");
 		modelAndView.addObject("BOOKSLIST", booksList);
 		return modelAndView;
-
 	}
 
 	@PostMapping("/save")
@@ -40,4 +39,29 @@ public class BookController {
 		return modelAndView;
 	}
 
+	@PostMapping("/update")
+	public ModelAndView modify(@RequestParam Integer id) {
+		Book book = bookDao.findById(id).get();
+		ModelAndView modelAndView = new ModelAndView("updatebook");
+		modelAndView.addObject("BOOK", book);
+		return modelAndView;
+	}
+
+	@GetMapping("/delete")
+	public ModelAndView delete(@RequestParam Integer id) {
+		Book book = bookDao.findById(id).get();
+		bookDao.delete(book);
+		List<Book> booksList = bookDao.findAll();
+		ModelAndView modelAndView = new ModelAndView("listbooks");
+		modelAndView.addObject("BOOKSLIST", booksList);
+		return modelAndView;
+	}
+
+	@GetMapping("/retrieve")
+	public ModelAndView retrieve(@RequestParam Integer id) {
+		Book book = bookDao.findById(id).get();
+		ModelAndView modelAndView = new ModelAndView("bookinfo");
+		modelAndView.addObject("BOOK", book);
+		return modelAndView;
+	}
 }
